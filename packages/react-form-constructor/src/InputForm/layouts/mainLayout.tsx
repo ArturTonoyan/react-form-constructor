@@ -8,7 +8,7 @@ function MainLayout({
   errorClass,
 }: {
   children: React.ReactNode;
-  label?: string;
+  label?: React.ReactNode;
   required?: string | boolean;
   error: any;
   name: string;
@@ -17,9 +17,11 @@ function MainLayout({
 }) {
   return (
     <div>
-      <label className={labelClass}>
-        {label} {required ? <span>*</span> : null}
-      </label>
+      {label && (
+        <label className={labelClass}>
+          {label} {required ? <span>*</span> : null}
+        </label>
+      )}
       {children}
       {error?.[name] && (
         <span className={errorClass}>{error?.[name]?.message}</span>

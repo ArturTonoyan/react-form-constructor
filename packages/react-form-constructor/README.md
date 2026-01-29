@@ -15,7 +15,7 @@
 ## Установка
 
 ```bash
-npm i react-form-constructor
+npm install @arturton/react-form-constructor
 ```
 
 ## Быстрый старт

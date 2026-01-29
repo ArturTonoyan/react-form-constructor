@@ -1,3 +1,10 @@
+import {
+  UseFormRegister,
+  FieldValues,
+  FieldErrors,
+  Control,
+} from "react-hook-form";
+
 export type FormField<T extends object = any> = {
   label: string;
   placeholder: string;
@@ -20,13 +27,21 @@ export type FormLayoutProps<T extends object = any> = {
   funSubmit: (data: T) => void;
   formClass?: string;
   buttonClass?: string;
-} & (
-  | {
-      formData: FormField<T>[];
-      children?: never;
-    }
-  | {
-      formData?: never;
-      children: React.ReactNode;
-    }
-);
+  buttonName?: string;
+  formData: FormField<T>[];
+};
+
+export type FormProviderProps<T extends object = any> = {
+  setFormApi?: (formMethods: any) => void;
+  children: React.ReactNode;
+  funSubmit: (data: T) => void;
+  className?: string;
+};
+
+export type FormContextType<T extends FieldValues = any> = {
+  register: UseFormRegister<T>;
+  errors: FieldErrors<T>;
+  control: Control<T>;
+  defaultValues?: T;
+  values?: T;
+};
