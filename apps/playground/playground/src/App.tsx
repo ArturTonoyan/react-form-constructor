@@ -5,6 +5,10 @@ import {
   FormPasswordInput,
   FormTextarea,
   FormMaskedInput,
+  FormSelect,
+  FormNumber,
+  FormDate,
+  FormRange,
   FormFileInput,
   FormCheckbox,
   FormRadio,
@@ -21,6 +25,10 @@ function App() {
     password: string;
     description?: string;
     phone?: string;
+    country?: string;
+    age?: number;
+    birthDate?: string;
+    rating?: number;
     avatar?: FileList;
     terms?: boolean;
     gender?: string;
@@ -141,15 +149,15 @@ function App() {
           name="phone"
           maska={{
             required: "Телефон обязателен",
-            format: "+1 (###) ###-####",
+            format: "+7 (###) ###-####",
             mask: "_",
           }}
           className="flex flex-col gap-2"
         >
           <FormLabel classNameError="text-red-500">Телефон</FormLabel>
           <FormMaskedInput
-            placeholder="+1 (___) ___-____"
-            className="w-60 p-2 border border-gray-300 rounded"
+            placeholder="+7 (___) ___-____"
+            className="w-40 p-2 border border-gray-300 rounded"
             classNameError="border-red-500 focus:border-red-500 outline-none"
           />
           <FormError className="text-red-500 text-sm" />
@@ -189,6 +197,73 @@ function App() {
             <FormCheckbox className="w-4 h-4" value={true} />
             <span>Я согласен с условиями использования</span>
           </label>
+          <FormError className="text-red-500 text-sm" />
+        </FormInputLayout>
+
+        <FormInputLayout
+          name="country"
+          required="Выберите страну"
+          className="flex flex-col gap-2"
+        >
+          <FormLabel classNameError="text-red-500">Страна</FormLabel>
+          <FormSelect
+            options={[
+              { value: "us", label: "США" },
+              { value: "uk", label: "Великобритания" },
+              { value: "ca", label: "Канада" },
+              { value: "au", label: "Австралия" },
+              { value: "fr", label: "Франция" },
+            ]}
+            placeholder="Выберите страну"
+            className="w-60 p-2 border border-gray-300 rounded"
+            classNameError="border-red-500"
+          />
+          <FormError className="text-red-500 text-sm" />
+        </FormInputLayout>
+
+        <FormInputLayout
+          name="age"
+          className="flex flex-col gap-2"
+        >
+          <FormLabel classNameError="text-red-500">Возраст</FormLabel>
+          <FormNumber
+            placeholder="Введите возраст"
+            className="w-60 p-2 border border-gray-300 rounded"
+            classNameError="border-red-500"
+            min={1}
+            max={120}
+            step={1}
+          />
+          <FormError className="text-red-500 text-sm" />
+        </FormInputLayout>
+
+        <FormInputLayout
+          name="birthDate"
+          className="flex flex-col gap-2"
+        >
+          <FormLabel classNameError="text-red-500">Дата рождения</FormLabel>
+          <FormDate
+            className="w-60 p-2 border border-gray-300 rounded"
+            classNameError="border-red-500"
+            type="date"
+          />
+          <FormError className="text-red-500 text-sm" />
+        </FormInputLayout>
+
+        <FormInputLayout
+          name="rating"
+          className="flex flex-col gap-2"
+        >
+          <FormLabel classNameError="text-red-500">Рейтинг (ползунок)</FormLabel>
+          <FormRange
+            min={0}
+            max={10}
+            step={1}
+            range="single"
+            showValue={true}
+            className="w-60"
+            containerClassName="flex flex-col gap-2"
+          />
           <FormError className="text-red-500 text-sm" />
         </FormInputLayout>
 
