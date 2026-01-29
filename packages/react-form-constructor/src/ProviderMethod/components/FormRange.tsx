@@ -55,9 +55,7 @@ function FormRange({
               style={{ cursor: "pointer" }}
             />
             {showValue && (
-              <div style={{ marginTop: "8px", fontSize: "14px" }}>
-                {value}
-              </div>
+              <div style={{ marginTop: "8px", fontSize: "14px" }}>{value}</div>
             )}
           </div>
         )}

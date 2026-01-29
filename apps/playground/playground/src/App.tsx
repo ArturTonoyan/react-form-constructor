@@ -221,10 +221,7 @@ function App() {
           <FormError className="text-red-500 text-sm" />
         </FormInputLayout>
 
-        <FormInputLayout
-          name="age"
-          className="flex flex-col gap-2"
-        >
+        <FormInputLayout name="age" className="flex flex-col gap-2">
           <FormLabel classNameError="text-red-500">Возраст</FormLabel>
           <FormNumber
             placeholder="Введите возраст"
@@ -237,10 +234,7 @@ function App() {
           <FormError className="text-red-500 text-sm" />
         </FormInputLayout>
 
-        <FormInputLayout
-          name="birthDate"
-          className="flex flex-col gap-2"
-        >
+        <FormInputLayout name="birthDate" className="flex flex-col gap-2">
           <FormLabel classNameError="text-red-500">Дата рождения</FormLabel>
           <FormDate
             className="w-60 p-2 border border-gray-300 rounded"
@@ -250,11 +244,10 @@ function App() {
           <FormError className="text-red-500 text-sm" />
         </FormInputLayout>
 
-        <FormInputLayout
-          name="rating"
-          className="flex flex-col gap-2"
-        >
-          <FormLabel classNameError="text-red-500">Рейтинг (ползунок)</FormLabel>
+        <FormInputLayout name="rating" className="flex flex-col gap-2">
+          <FormLabel classNameError="text-red-500">
+            Рейтинг (ползунок)
+          </FormLabel>
           <FormRange
             min={0}
             max={10}

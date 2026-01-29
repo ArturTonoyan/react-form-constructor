@@ -1,6 +1,6 @@
 {
   "name": "@arturton/react-form-constructor",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Flexible form constructor with React Hook Form integration",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
