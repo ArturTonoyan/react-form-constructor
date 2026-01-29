@@ -1,0 +1,52 @@
+{
+  "name": "react-form-constructor",
+  "version": "0.1.0",
+  "description": "Flexible form constructor with React Hook Form integration",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts --external react,react-dom,react-hook-form,react-number-format,zod",
+    "dev": "tsup src/index.ts --format cjs,esm --dts --watch"
+  },
+  "keywords": [
+    "react",
+    "forms",
+    "form-builder",
+    "validation",
+    "hooks"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArturTonoyan/react-form-constructor.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ArturTonoyan/react-form-constructor/issues"
+  },
+  "homepage": "https://github.com/ArturTonoyan/react-form-constructor#readme",
+  "peerDependencies": {
+    "react": "^18 || ^19",
+    "react-hook-form": "^7.0.0",
+    "react-number-format": "^5.4.4"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/react": "^19.2.10",
+    "react-number-format": "^5.4.4"
+  },
+  "dependencies": {
+    "zod": "^3.22.0"
+  }
+}

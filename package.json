@@ -1,0 +1,27 @@
+{
+  "name": "rfc-monorepo",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "apps/playground/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev -w react-form-constructor",
+    "build": "npm run build -w react-form-constructor",
+    "playground": "npm run dev -w playground"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArturTonoyan/react-form-constructor.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ArturTonoyan/react-form-constructor/issues"
+  },
+  "homepage": "https://github.com/ArturTonoyan/react-form-constructor#readme",
+  "license": "MIT",
+  "devDependencies": {
+    "react-hook-form": "^7.71.1",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3"
+  }
+}
