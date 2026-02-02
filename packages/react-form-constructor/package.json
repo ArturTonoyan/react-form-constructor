@@ -1,6 +1,6 @@
 {
   "name": "@arturton/react-form-constructor",
-  "version": "0.1.5",
+  "version": "0.2.0",
   "description": "Flexible form constructor with React Hook Form integration",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -45,8 +45,5 @@
   "devDependencies": {
     "@types/react": "^19.2.10",
     "react-number-format": "^5.4.4"
-  },
-  "dependencies": {
-    "zod": "^3.22.0"
   }
 }
